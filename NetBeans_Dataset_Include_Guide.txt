@@ -1,0 +1,39 @@
+How to Configure NetBeans to Include the Dataset Folder in the Jar:
+
+1. Open your NetBeans IDE and load your project.
+
+2. Right-click on your project name in the "Projects" pane and select "Properties".
+
+3. In the Project Properties window, select the "Sources" category.
+
+4. Under "Source Package Folders", click the "Add Folder..." button.
+
+5. Navigate to your "dataset" folder (the folder containing your JSON files) and select it.
+
+6. Click "Open" to add it as a source folder. This will make NetBeans treat it as a resource folder.
+
+7. Click "OK" to close the Project Properties window.
+
+8. Perform a "Clean and Build" on your project (Right-click project > Clean and Build).
+
+9. After the build completes, check the generated jar file (usually in the "dist" folder) to verify that the "dataset" folder and its JSON files are included inside the jar.
+
+10. Run your jar file again. The resource loading should now find the JSON files inside the jar, and your bot should display recipe details correctly.
+
+Alternative Method (Editing project.properties):
+
+1. Open the file "nbproject/project.properties" in your project directory.
+
+2. Add or modify the following line to include the dataset folder in the jar:
+
+   dist.jar.includes=dataset/**
+
+3. Save the file.
+
+4. Clean and build your project again.
+
+5. Verify the jar contents and run the jar.
+
+This configuration ensures that the dataset folder and its contents are packaged inside the jar, allowing your code to load the JSON resources correctly when running from the jar.
+
+If you want, I can help you with any of these steps interactively.

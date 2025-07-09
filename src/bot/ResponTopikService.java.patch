@@ -1,0 +1,106 @@
+package bot;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class ResponTopikService {
+
+    private static final String INDONESIAN_MEALS_URL = "https://www.themealdb.com/api/json/v1/1/filter.php?a=Indonesian";
+    private static final String RANDOM_MEAL_URL = "https://www.themealdb.com/api/json/v1/1/random.php";
+    private static final String SEARCH_MEAL_URL = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+
+    private static final Gson gson = new Gson();
+
+    public static String getRecipe(String query) {
+        if (query == null || query.isEmpty()) {
+            return "Silakan masukkan nama makanan untuk mencari resep.";
+        }
+        try {
+            String urlStr = SEARCH_MEAL_URL + java.net.URLEncoder.encode(query, "UTF-8");
+            String json = getJsonFromUrl(urlStr);
+            JsonObject jsonObject = JsonParser.parseString(json).getAsJsonObject();
+            if (jsonObject.get("meals") == null || jsonObject.get("meals").isJsonNull()) {
+                return "Maaf, resep untuk '" + query + "' tidak ditemukan.";
+            }
+            JsonArray meals = jsonObject.getAsJsonArray("meals");
+            if (meals.size() == 0) {
+                return "Maaf, resep untuk '" + query + "' tidak ditemukan.";
+            }
+            JsonObject meal = meals.get(0).getAsJsonObject();
+            String name = meal.get("strMeal").getAsString();
+            String category = meal.get("strCategory").isJsonNull() ? "" : meal.get("strCategory").getAsString();
+            String area = meal.get("strArea").isJsonNull() ? "" : meal.get("strArea").getAsString();
+            String instructions = meal.get("strInstructions").isJsonNull() ? "" : meal.get("strInstructions").getAsString();
+            String image = meal.get("strMealThumb").isJsonNull() ? "" : meal.get("strMealThumb").getAsString();
+
+            String response = String.format(
+                "🍽️ *Makanan Khas Indonesia Hari Ini* 🇮🇩\n\n" +
+                "*🍛 Nama:* %s\n" +
+                "*🌍 Asal:* %s\n" +
+                "*📂 Kategori:* %s\n\n" +
+                "📝 *Deskripsi Singkat:*\n%s\n\n" +
+                "📖 *Cara Membuat:*\n%s\n\n" +
+                "🖼️ *Gambar:* [Klik di sini](%s)\n\n" +
+                "Ketik nama makanan lain untuk cari resep lainnya!",
+                name, area, category, instructions.length() > 200 ? instructions.substring(0, 200) + "..." : instructions, instructions, image
+            );
+
+            System.out.println("Recipe fetched successfully for query: " + query);
+            return response;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Maaf, terjadi kesalahan saat mengambil data resep. Silakan coba lagi nanti.";
+        }
+    }
+
+    public static String getTrendingFoods() {
+        try {
+            String json = getJsonFromUrl(INDONESIAN_MEALS_URL);
+            JsonObject jsonObject = JsonParser.parseString(json).getAsJsonObject();
+            if (jsonObject.get("meals") == null || jsonObject.get("meals").isJsonNull()) {
+                return "Maaf, tidak ada data makanan trending saat ini.";
+            }
+            JsonArray meals = jsonObject.getAsJsonArray("meals");
+            if (meals == null || meals.size() == 0) {
+                return "Maaf, tidak ada data makanan trending saat ini.";
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.append("Makanan trending khas Indonesia:\n");
+            for (int i = 0; i < Math.min(5, meals.size()); i++) {
+                JsonObject meal = meals.get(i).getAsJsonObject();
+                String name = meal.get("strMeal").getAsString();
+                String image = meal.get("strMealThumb").getAsString();
+                sb.append(i + 1).append(". ").append(name).append("\n");
+                sb.append("   Gambar: ").append(image).append("\n");
+            }
+            return sb.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Maaf, terjadi kesalahan saat mengambil data makanan trending.";
+        }
+    }
+
+    private static String getJsonFromUrl(String urlStr) throws Exception {
+        URL url = new URL(urlStr);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setConnectTimeout(5000);
+        conn.setReadTimeout(5000);
+
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+            String inputLine;
+            StringBuilder content = new StringBuilder();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            return content.toString();
+        }
+    }
+}

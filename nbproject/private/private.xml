@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/db/DBConnection.java</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/ui/FrmLogin.java</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/bot/IndonesianFoodLoader.java</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/bot/ResponTopikService.java.patch</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/models/Keyword.java</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/ui/KeywordManagementForm.java</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/ui/MemberForm.java</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/ui/TrendingFoodForm.java</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/ui/MainForm.java</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/services/MockDatabaseService.java</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/services/TelegramBotService.java</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/db/admins_table.sql</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/telegrambot/TelegramBot.java</file>
+            <file>file:/C:/Project/NetBeanss/TelegramBot/src/ui/FormBroadcast.java</file>
+        </group>
+    </open-files>
+</project-private>

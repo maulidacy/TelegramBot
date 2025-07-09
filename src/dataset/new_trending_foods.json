@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Tempe sandal jepit",
+    "category": "Camilan",
+    "description": "Tempe goreng viral berbentuk sandal jepit dengan sosis sebagai tali. Renyah, gurih, dan unik.",
+    "ingredients": "Tempe, sosis, tepung terigu, tepung bumbu, garam, air, minyak goreng",
+    "steps": "1) Potong tempe menyerupai sandal, beri lubang tali.\n2) Pasang sosis sebagai tali sandal.\n3) Celupkan ke adonan tepung.\n4) Goreng hingga renyah.\n5) Sajikan hangat.",
+    "url": "https://www.liputan6.com/lifestyle/read/6055924/resep-tempe-sandal-jepit-bikin-gorengan-viral-di-rumah",
+    "trending": true
+  },
+  {
+    "title": "Cheesecake",
+    "category": "Kue",
+    "description": "Kue keju klasik yang lembut dan creamy, cocok untuk dessert.",
+    "ingredients": "400 g cream cheese, 130 g gula, 2 sdm maizena, 2 butir telur, 1 kuning telur, 100 ml krim kental, biskuit dan mentega untuk dasar",
+    "steps": "1) Hancurkan biskuit, campur dengan mentega, tekan di loyang.\n2) Campur cream cheese, gula, maizena, telur, dan krim.\n3) Tuang di atas dasar biskuit.\n4) Panggang hingga matang dan berwarna keemasan.\n5) Dinginkan sebelum disajikan.",
+    "url": "https://www.onceuponachef.com/recipes/classic-cheesecake.html",
+    "trending": true
+  },
+  {
+    "title": "Bolu ketan hitam keju lumer",
+    "category": "Kue",
+    "description": "Bolu ketan hitam lembut dengan isian keju lumer di tengah, manis dan legit.",
+    "ingredients": "4 butir telur, 135 g gula pasir, 175 g tepung ketan hitam, 100 ml minyak, 65 ml santan, keju parut, SKM",
+    "steps": "1) Kocok telur dan gula hingga kental.\n2) Masukkan tepung ketan, minyak, dan santan.\n3) Tuang sebagian adonan, beri isian keju + SKM.\n4) Tutup sisa adonan, panggang hingga matang.\n5) Sajikan hangat.",
+    "url": "https://cookpad.com/id/resep/24748044-bolu-ketan-hitam-keju-lumer",
+    "trending": true
+  },
+  {
+    "title": "Es pisang ijo",
+    "category": "Minuman",
+    "description": "Minuman segar dari pisang yang dibalut adonan hijau dan disajikan dengan sirup manis.",
+    "ingredients": "100 gr tepung beras, 100 gr tepung terigu, 500 ml santan, 50 gr gula pasir, 1/2 sdt garam, pasta pandan secukupnya",
+    "steps": "1) Balut pisang dengan adonan tepung beras hijau.\n2) Kukus hingga matang.\n3) Sajikan dengan sirup gula merah dan es batu.",
+    "url": "https://cookpad.com/id/resep/24706698?ref=search&search_term=es+pisang+ijo",
+    "trending": true
+  },
+  {
+    "title": "Bakso bomber",
+    "category": "Camilan",
+    "description": "Bakso sapi ukuran besar dengan isian daging cincang dan keju, gurih dan mengenyangkan.",
+    "ingredients": "Daging sapi giling, keju, daging cincang berbumbu, tepung tapioka, bawang putih, garam, air es",
+    "steps": "1) Campur daging giling, bumbu, dan tepung.\n2) Bentuk bola besar, isi tengahnya dengan daging cincang dan keju.\n3) Rebus hingga matang.\n4) Sajikan hangat.",
+    "url": "https://cookpad.com/id/resep/12640377-bakso-bom-isi-daging-dan-keju",
+    "trending": true
+  },
+  {
+    "title": "Sushi gulung martabak",
+    "category": "Camilan",
+    "description": "Martabak tipis berisi nasi, nori, dan isian ala sushi, digulung dan digoreng.",
+    "ingredients": "Tepung terigu, telur, air, daun bawang, nasi, nori, isian sushi (tuna, timun, wortel)",
+    "steps": "1) Buat kulit martabak dari campuran tepung dan telur.\n2) Masak tipis di teflon.\n3) Tata nasi, nori, dan isian sushi.\n4) Gulung rapi, goreng hingga matang.\n5) Potong dan sajikan.",
+    "url": "https://cookpad.com/id/resep/7926889-sushi-egg-roll",
+    "trending": true
+  },
+  {
+    "title": "Rendang sapi melted",
+    "category": "Daging",
+    "description": "Rendang khas Padang dengan tambahan keju leleh yang menggoda.",
+    "ingredients": "Daging sapi, santan, bumbu rendang (serai, lengkuas, cabai, bawang), keju leleh",
+    "steps": "1) Masak rendang hingga empuk dan bumbu meresap.\n2) Tambahkan keju leleh menjelang penyajian.\n3) Aduk sebentar dan sajikan hangat.",
+    "url": "https://cookpad.com/id/resep/15993390-rendang-sapi-lumer-leleh-keju",
+    "trending": true
+  }
+]

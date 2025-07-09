@@ -1,0 +1,67 @@
+@startuml
+title Activity Diagram for Telegram Bot Project
+
+start
+
+:User opens Telegram;
+:User sends /daftar command;
+if (User registered?) then (no)
+  :Register user with status "unv";
+  :Send welcome and registration instructions;
+else (yes)
+  if (User verified?) then (no)
+    :Prompt user to share contact for verification;
+    :User shares contact;
+    :Update status to "pending";
+    :Notify admin for approval;
+  else (yes)
+    :Show main menu options;
+  endif
+endif
+
+partition Admin {
+  :Admin receives notification;
+  if (Admin approves user?) then (yes)
+    :Update user status to "verified";
+    :Notify user of approval;
+  else (no)
+    :Update user status to "blocked";
+    :Notify user of rejection;
+  endif
+}
+
+partition MainForm_UI {
+  :Admin logs into MainForm;
+  :Load members from database;
+  fork
+    :Add member;
+  fork again
+    :Edit member;
+  fork again
+    :Delete member;
+  fork again
+    :Refresh member list;
+  end fork
+  :Broadcast message to members;
+}
+
+partition Bot_Interaction {
+  :User selects menu option;
+  switch (Menu option)
+    case "Makanan Trending":
+      :Show trending foods list;
+      :User selects recipe number;
+      :Show recipe details;
+    case "Tips Masak":
+      :Show cooking tips;
+    case "Cari Makanan":
+      :User inputs search query;
+      :Show matching recipes;
+    case "Rekomendasi Hari Ini":
+      :User selects category or inputs ingredients;
+      :Show recommended recipes;
+  endswitch
+}
+
+stop
+@enduml
