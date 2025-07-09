@@ -7,11 +7,3 @@ CREATE TABLE IF NOT EXISTS admins (
     nama_lengkap VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
--- Insert a sample admin user with username 'admin' and password 'admin123' hashed with MD5
-INSERT INTO admins (username, password, nama_lengkap) VALUES (
-    'maulida',
-    MD5('admin123'),
-    'Administrator'
-);
-t
